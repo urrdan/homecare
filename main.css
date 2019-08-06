@@ -1,3 +1,62 @@
+.aboutP {
+  animation: aboutP  1.2s ease-out both; }
+
+.aboutImg {
+  animation: aboutImg  ease-out 1.2s both; }
+
+.aboutH {
+  animation: aboutH  ease-out 1.5s both; }
+
+.sevI {
+  animation: sevI  ease-out 0.5s both; }
+
+.sevP {
+  animation: sevP  ease-out 0.5s both; }
+
+@keyframes aboutP {
+  0% {
+    transform: rotateX(50deg);
+    opacity: 0; }
+  70% {
+    opacity: 0.4; }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes aboutImg {
+  0% {
+    transform: rotateY(50deg);
+    opacity: 0; }
+  70% {
+    opacity: 0.4; }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes aboutH {
+  0% {
+    opacity: 0; }
+  70% {
+    opacity: 0.4; }
+  100% {
+    opacity: 1; } }
+
+@keyframes sevI {
+  0% {
+    transform: scale(0.5);
+    opacity: 0; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes sevP {
+  0% {
+    transform: scale(1.5);
+    opacity: 0; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
 .heading {
   text-shadow: 1px 1px #a0a0a0;
   font-family: Kaushan Script; }
@@ -50,7 +109,9 @@ html, body {
 .menu {
   background: white;
   color: red;
-  text-align: right; }
+  justify-content: flex-end; }
+  .menu > div {
+    justify-content: flex-end; }
   .menu ul {
     padding: 0;
     margin: 0; }
@@ -99,25 +160,24 @@ html, body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5); }
 
-.mission {
-  width: 900px;
+.motto {
+  max-width: 900px;
   text-align: center;
   margin: auto;
   padding: 100px 0; }
-  .mission p {
+  .motto p {
     font-size: 20px;
     font-family: 'Quicksand'; }
 
 .about {
   display: grid;
-  grid-template-columns: 1fr auto auto 1fr;
+  grid-template-columns: 1fr minmax(auto, 400px) auto 1fr;
   grid-gap: 30px;
   background: #f5d4b0;
   padding: 20px 0; }
   .about section {
     grid-column: 2/3;
-    padding: 10px;
-    width: 400px; }
+    padding: 10px; }
     .about section h2 {
       opacity: 0;
       text-align: left; }
@@ -126,7 +186,7 @@ html, body {
       line-height: 1.7em;
       opacity: 0; }
   .about img {
-    width: 400px;
+    max-width: 400px;
     box-shadow: 0 0 15px gray;
     opacity: 0; }
 
@@ -183,7 +243,8 @@ html, body {
     margin: auto;
     max-width: 900px;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
     padding: 60px 0; }
     .services-cont .sevs .sev {
       width: 250px;
@@ -302,61 +363,34 @@ footer {
   footer .copywrite {
     color: gray; }
 
-.aboutP {
-  animation: aboutP  1.2s ease-out both; }
+@media screen and (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr; }
+    .about section {
+      grid-column: 1/-1; }
+    .about img {
+      display: none; }
+  .services {
+    flex-direction: column;
+    align-items: center; }
+  .contact-cont .contact {
+    grid-template-columns: 1fr; }
+  .contact-cont .cont {
+    border: none;
+    border-top: 1px solid #000;
+    margin: auto; } }
 
-.aboutImg {
-  animation: aboutImg  ease-out 1.2s both; }
-
-.aboutH {
-  animation: aboutH  ease-out 1.5s both; }
-
-.sevI {
-  animation: sevI  ease-out 0.5s both; }
-
-.sevP {
-  animation: sevP  ease-out 0.5s both; }
-
-@keyframes aboutP {
-  0% {
-    transform: rotateX(50deg);
-    opacity: 0; }
-  70% {
-    opacity: 0.4; }
-  100% {
-    transform: rotateX(0deg);
-    opacity: 1; } }
-
-@keyframes aboutImg {
-  0% {
-    transform: rotateY(50deg);
-    opacity: 0; }
-  70% {
-    opacity: 0.4; }
-  100% {
-    transform: rotateY(0deg);
-    opacity: 1; } }
-
-@keyframes aboutH {
-  0% {
-    opacity: 0; }
-  70% {
-    opacity: 0.4; }
-  100% {
-    opacity: 1; } }
-
-@keyframes sevI {
-  0% {
-    transform: scale(0.5);
-    opacity: 0; }
-  100% {
-    transform: scale(1);
-    opacity: 1; } }
-
-@keyframes sevP {
-  0% {
-    transform: scale(1.5);
-    opacity: 0; }
-  100% {
-    transform: scale(1);
-    opacity: 1; } }
+@media screen and (max-width: 650px) {
+  .top .info {
+    display: none; }
+  .contact-cont .input-cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center; }
+    .contact-cont .input-cont input {
+      width: 80%; }
+      .contact-cont .input-cont input:first-of-type {
+        margin-bottom: 20px; }
+  .contact-cont .cont {
+    padding: 50px 0; } }

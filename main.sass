@@ -2,12 +2,14 @@ $color1: #05edf5
 $color2: #0c224f //rgb(12,34,79)
 $color3: #12b0a3
 
+@import animations
+
 .heading
     text-shadow: 1px 1px rgb(160,160,160)
     font-family: Kaushan Script
 html,body
     width: 100%
-    height: 100%
+    height: 100% 
     margin: 0
     font-family: 'Montserrat'
     color: $color2
@@ -53,7 +55,9 @@ html,body
 .menu
     background: white
     color: red
-    text-align: right
+    justify-content: flex-end
+    >div
+        justify-content: flex-end
     ul
         padding: 0
         margin: 0
@@ -100,46 +104,41 @@ html,body
         position: absolute
         width: 100%
         height: 100%
-        //left: 0
-        //top: 0
         background: rgba(0,0,0,0.5)
-.mission
-    width: 900px
+.motto
+    max-width: 900px
     text-align: center
     margin: auto
     padding: 100px 0
-    //background: #000
     p
         font-size: 20px
         font-family: 'Quicksand'
 .about
     display: grid
-    grid-template-columns: 1fr auto auto 1fr
-    grid-gap: 30px
+    grid-template-columns: 1fr  minmax(auto,400px) auto 1fr 
+    grid-gap: 30px 
     background: #f5d4b0
     padding: 20px 0
     //text-align: center
     section
-        grid-column: 2/3
+        grid-column: 2/3 
         padding: 10px
-        width: 400px
+        //max-width: 400px
 
         h2
             opacity: 0
-            text-align: left
+            text-align: left 
         
         p
-            font-size: 19px
-            line-height: 1.7em
+            font-size: 19px 
+            line-height: 1.7em 
             opacity: 0
             
     img
-        width: 400px
+        max-width: 400px
         //border: $color2 5px solid
         box-shadow: 0 0 15px gray
         opacity: 0
-
-
 
 .services
     display: flex 
@@ -147,16 +146,17 @@ html,body
     justify-content: center
     margin: 50px 0 100px
     color: white
+
     .serv
         width: 320px
-        padding-top: 140px
-        //box-shadow: 0 0 10px black
-        margin: 0px 15px
+        padding-top: 140px 
+        //box-shadow: 0 0 10px black 
+        margin: 0px 15px 
         background: white
         border-radius: 15px 15px 50% 50% / 15px 15px 20px 20px
         overflow: hidden
         .cont
-            background: #12b0a3
+            background: #12b0a3 
             display: flex
             flex-direction: column
             padding: 0 20px 10px
@@ -194,7 +194,8 @@ html,body
         margin: auto
         max-width: 900px
         display: grid
-        grid-template-columns: repeat(3,auto)
+        grid-template-columns: repeat(auto-fill, 300px)
+        justify-content: center
         padding: 60px 0
         .sev
             width: 250px
@@ -229,7 +230,6 @@ html,body
         color: white
     p
         font-size: 20px
-
     
 
 .contact-cont
@@ -242,12 +242,12 @@ html,body
         max-width: 1200px
         margin: auto
         display: grid
-        grid-template-columns: 1fr auto
+        grid-template-columns: 1fr auto 
     h3
         margin: 0 0 50px
         font-size: 20px
         font-family: serif
-        font-family: Kaushan Script
+        font-family: Kaushan Script 
 
     input, textarea
         background: white
@@ -291,12 +291,12 @@ html,body
             
         i
             font-size: 50px
-            margin-right: 20px
-            color: $color2//rgb(200,200,200) 
+            margin-right: 20px 
+            color: $color2//rgb(200,200,200)   
 
         span
             align-self: center
-            font-style: italic
+            font-style: italic 
             font-size: 21px
             color: rgb(230,230,230)
         
@@ -330,60 +330,7 @@ footer
     .copywrite
         color: gray
 
+@import queries
 
-.aboutP
-    animation: aboutP  1.2s ease-out both
 
-.aboutImg
-    animation: aboutImg  ease-out 1.2s both
-.aboutH
-    animation: aboutH  ease-out 1.5s both
-.sevI
-    animation: sevI  ease-out 0.5s both
-.sevP
-    animation: sevP  ease-out 0.5s both
 
-@keyframes aboutP
-    0%
-        transform: rotateX(50deg)
-        opacity: 0
-    70%
-        opacity: 0.4
-    100%
-        transform: rotateX(0deg)
-        opacity: 1
-
-@keyframes aboutImg
-    0%
-        transform: rotateY(50deg)
-        opacity: 0
-    70%
-        opacity: 0.4
-    100%
-        transform: rotateY(0deg)
-        opacity: 1
-@keyframes aboutH
-    0%
-        //transform: scale(0.5)
-        opacity: 0
-    70%
-        opacity: 0.4
-    100%
-        //transform: scale(1)
-        opacity: 1
-
-@keyframes sevI
-    0%
-        transform: scale(0.5)
-        opacity: 0
-    100%
-        transform: scale(1)
-        opacity: 1
-
-@keyframes sevP
-    0%
-        transform: scale(1.5)
-        opacity: 0
-    100%
-        transform: scale(1)
-        opacity: 1
