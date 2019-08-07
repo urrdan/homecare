@@ -3,7 +3,8 @@ $color2: #0c224f //rgb(12,34,79)
 $color3: #12b0a3
 
 @import animations
-
+.disappear
+    display: none
 .heading
     text-shadow: 1px 1px rgb(160,160,160)
     font-family: Kaushan Script
@@ -32,6 +33,7 @@ html,body
     justify-content: space-between 
     align-items: center
     position: relative
+    
     >*
         z-index: 0
         margin: 10px
@@ -40,12 +42,12 @@ html,body
         font-weight: bolder
         color: orange
     .info
-        p
+        .info-p
             margin: 0
-        span:last-of-type
-            color: $color1
-            font-size: 1.5em
-            font-weight: bold
+            span:last-of-type
+                color: $color1
+                font-size: 24px
+                font-weight: bold
     &:before
         content: ''
         position: absolute
@@ -54,16 +56,24 @@ html,body
         background: rgba(12,34,79,0.9)
 .menu
     background: white
-    color: red
-    justify-content: flex-end
-    >div
-        justify-content: flex-end
+    color: black
+    display: grid
+    grid-template-columns: auto auto
+    justify-content: space-between
+    padding: 4px 10px
+    .fa-bars
+        display: none
+        font-size: 30px
+    .ul-cont
+        grid-column: -2/-1
     ul
         padding: 0
         margin: 0
+        display: flex
+        flex-direction: row
+        color: red
         li
             list-style: none
-            display: inline-block
             border-left: solid
             padding: 15px 27px
             transition: 0.7s ease-out
@@ -74,6 +84,14 @@ html,body
             a
                 color: inherit
                 text-decoration: none
+    .info-p
+        margin: 0
+        align-self: center
+        span:last-of-type
+            color: $color1
+            font-size: 16px
+            font-weight: bold
+
 
 .display
     display: flex
