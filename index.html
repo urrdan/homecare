@@ -8,46 +8,54 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand|Kaushan+Script&display=swap" rel="stylesheet">
     <script src="jquery.js"></script>
-    <!-- <script src="bootstrap.js"></script> -->
-    <!-- <link rel="stylesheet" href="custome.css"> -->
+    <script src="bootstrap.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="top" id="top">
-            <div class="logo">WaxGabad</div>
+            <div class="logo">WaxGabad <span>homecare inc.</span> </div>
             <div class="info">
                 <p class="info-p"><span>Address: </span> <span>6578 Spring ave N</span></p>
                 <p class="info-p"><span>Call Today:  </span> <span>(612) 398-74019</span></p>
             </div>
 
         </div>
-        <!-- <div class="menu navbar navbar-expand-sm ">
-            <div class="navbar-collapse collapse ul-cont" id="io">
-            <ul class="navbar-nav" >
-                <li><a class="nav-link" href='#top'>HOME</a></li>
-                <li><a class="nav-link" href='#about'>ABOUT US</a></li>
-                <li><a class="nav-link" href='#contact-cont'>CONTACTS</a></li>
-                <li><a class="nav-link" href='#services-cont'>SERVICES</a></li>
-            </ul>
-            </div>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#io"><i class="fas fa-bars"></i></span></button>
-        </div> -->
-        <div class="menu navbar navbar-expand-sm ">
-            <div class="navbar-collapse collapse ul-cont" id="io">
-            <ul class="navbar-nav" >
-                <li><a class="nav-link" href='#top'>HOME</a></li>
-                <li><a class="nav-link" href='#about'>ABOUT US</a></li>
-                <li><a class="nav-link" href='#contact-cont'>CONTACTS</a></li>
-                <li><a class="nav-link" href='#services-cont'>SERVICES</a></li>
+
+        <div class="menu ">
+            <div class="ul-cont">
+            <ul>
+                <li><a href='#top'>HOME</a></li>
+                <li><a href='#about'>ABOUT US</a></li>
+                <li><a href='#contact-cont'>CONTACTS</a></li>
+                <li><a href='#services-cont'>SERVICES</a></li>
             </ul>
             </div>
             <i class="fas fa-bars"></i></span>
         </div>
-        <div class="display">
-            <p>Why do people choose us?</p>
-            <p>SAFETY & COMFORT</p>
-            <button>Learn More</button>
+
+        <div id='iio' class="display carousel slide" data-ride='carousel'>
+            <div class="carousel-inner">
+                <div class="carousel-item active"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div> 
+            </div>
+            <ul class="carousel-indicators">
+                <li data-target="#iio" data-slide-to='0' class="active"></li>
+                <li data-target="#iio" data-slide-to='1'></li>
+                <li data-target="#iio" data-slide-to='2'></li>
+            </ul>
+            <a href="#iio" class="carousel-control-prev" data-slide='prev'>
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href='#iio' class="carousel-control-next" data-slide='next'>
+                <span class="carousel-control-next-icon"></span>
+            </a>
+            <section class="displ-info">
+                <p>Why do people choose us?</p>
+                <p>SAFETY & COMFORT</p>
+                <button>Learn More</button>
+            </section>
         </div>
     </div>
     <div class="subwrapper">
@@ -150,7 +158,7 @@
     <footer>
         <button> &uarr; Back-To-Top</button>
         <button>Term & Privacy</button>
-        <div class="media">
+        <div class="medias">
             <section>
                 <i class="fab fa-facebook-f"></i>
                 <span>waxgabad</span>

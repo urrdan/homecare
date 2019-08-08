@@ -1,28 +1,33 @@
 screenWidth=$(window).width()
-item=0
-list=['images/img1a.jpg','images/img1b.jpg','images/img1c.jpg']
 bigScreen= undefined
 brek= 650
-call=$('.info p:last')
+callUs=$('.info p:last')
 
+
+/* 
+item=0
+list=['images/img1a.jpg','images/img1b.jpg','images/img1c.jpg']
 setInterval(function(){
-    $('.wrapper').css({'background': `url(${list[item]}) no-repeat`, 'background-size': 'cover  '})
+    $('.wrapper').css({'background': `url(${list[item]}) no-repeat center`, 'background-size': 'cover  '})
     item++
     if (item>2){item=0}
-},2500)
+},2500) */
+
+//$('.ul-cont ul').addClass('disappear')
+
 
 function diffsize(x){ //piece of genius
     if(screenWidth>brek && bigScreen!=true){
         console.log('big screen')
-         $('ul').slideDown()
-         $('.menu .info-p').fadeOut(0)
+        $('.ul-cont ul').slideDown()
+        $('.menu .info-p').fadeOut(0)
         bigScreen=true
     }
     else if(screenWidth<brek && bigScreen!=false){
         console.log('small screen')
-        $('.menu').prepend(call.clone())
-        $('ul').slideUp(0)
-        $('.fa-bars').unbind('click').click(function(){$('ul').slideToggle();console.log(x)})
+        $('.menu').prepend(callUs.clone())
+        $('.ul-cont ul').slideUp(0)
+        $('.fa-bars').unbind('click').click(function(){$('.ul-cont ul').slideToggle();console.log(x)})
         bigScreen=false
     }
 }
@@ -50,5 +55,4 @@ $(window).resize(function(){
     screenWidth=$(window).width()
 
     diffsize('two')
-
 })

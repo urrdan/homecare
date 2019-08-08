@@ -1,10 +1,14 @@
-$color1: #05edf5
+@import bootstrap/functions 
+@import bootstrap/variables 
+@import bootstrap/mixin
+@import bootstrap/carousel 
+
+$color1: #05edf5 
 $color2: #0c224f //rgb(12,34,79)
 $color3: #12b0a3
 
 @import animations
-.disappear
-    display: none
+
 .heading
     text-shadow: 1px 1px rgb(160,160,160)
     font-family: Kaushan Script
@@ -18,29 +22,38 @@ html,body
 
 .wrapper
     color: white
-    background: url('images/img1c.jpg')
-    background-size: 100% 
+    //background: url('images/img1c.jpg') no-repeat
+    background-size: cover
     width: 100%
     height: 100%
     display: grid
     grid-template-rows: auto auto 1fr
     transition: 1s
+    overflow: hidden
+
         //background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.5) )
 .top
     text-align: right
     display: flex
     flex-direction: row
-    justify-content: space-between 
-    align-items: center
+    justify-content: space-between
+    align-items: flex-end
     position: relative
+    z-index: 1 
     
     >*
-        z-index: 0
         margin: 10px
     .logo
         font-size: 50px
         font-weight: bolder
         color: orange
+        span
+            color: rgb(210,210,210)
+            font-size: 20px
+            font-weight: normal
+            font-style: italic
+
+            //font-family: Kaushan Script
     .info
         .info-p
             margin: 0
@@ -48,12 +61,13 @@ html,body
                 color: $color1
                 font-size: 24px
                 font-weight: bold
-    &:before
+    &:after
         content: ''
         position: absolute
         width: 100%
         height: 100%
         background: rgba(12,34,79,0.9)
+        z-index: -1 //z-index to make it go below(-1 isn't absolute but relative to the parent's z-index)
 .menu
     background: white
     color: black
@@ -61,11 +75,14 @@ html,body
     grid-template-columns: auto auto
     justify-content: space-between
     padding: 4px 10px
+    z-index: 3   //z-index 
+
     .fa-bars
         display: none
         font-size: 30px
+        cursor: pointer
     .ul-cont
-        grid-column: -2/-1
+        grid-column: -2/-1 
     ul
         padding: 0
         margin: 0
@@ -99,12 +116,37 @@ html,body
     align-items: center
     flex-direction: column
     font-weight: bold
+    position: static
+    .carousel-inner
+        position: absolute
+        top: 0
+        bottom: 0
+        width: 100%
+        div
+            width: 100%
+            height: 100%
+            background-size: cover
+            background-position-x: center
+            &:nth-of-type(1)
+                background-image: url('images/img1a.jpg') 
+            &:nth-of-type(2)
+                background-image: url('images/img1b.jpg')
+            &:nth-of-type(3)
+                background-image: url('images/img1c.jpg')
+    .carousel-indicators 
+    .displ-info
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        z-index: 1  //z-index
     p
-        margin: 0px
+        margin: 0
     p:last-of-type
         color: $color1
         font-size: 45px
-        margin: 15px 0 80px
+        margin: 20px 0px
+        text-align: center
     button
         background: $color1
         border: none
@@ -114,12 +156,12 @@ html,body
         border-radius: 10px
         &:hover
             opacity: 0.6
-    position: relative
     >*
-        z-index: 10 
+        //z-index: 10 
     &:after
         content: ''
         position: absolute
+        top: 0
         width: 100%
         height: 100%
         background: rgba(0,0,0,0.5)
@@ -166,13 +208,14 @@ html,body
     color: white
 
     .serv
-        width: 320px
+        width: 318px
         padding-top: 140px 
         //box-shadow: 0 0 10px black 
         margin: 0px 15px 
         background: white
         border-radius: 15px 15px 50% 50% / 15px 15px 20px 20px
         overflow: hidden
+        box-sizing: border-box
         .cont
             background: #12b0a3 
             display: flex
@@ -266,15 +309,23 @@ html,body
         font-size: 20px
         font-family: serif
         font-family: Kaushan Script 
+    .input-cont
+        width: 80%
+        margin: auto
+        display: flex
+        flex-direction: row
+        justify-content: space-between
 
-    input, textarea
+    input, textarea 
         background: white
+
     input
-        width: 40%
+        width: 49%
         border-radius: 10px
         border: none
         outline: none
         padding: 10px
+        box-sizing: border-box
 
     textarea
         margin: 30px 0
@@ -284,6 +335,7 @@ html,body
         border: none
         outline: none
         padding: 10px
+        box-sizing: border-box
         
     button
         background: orange
@@ -301,7 +353,7 @@ html,body
     .cont
         text-align: left
         align-self: center
-        padding: 50px
+        padding: 30px 20px 50px 50px
         border-left: 1px solid #000
         p
             display: flex
@@ -333,7 +385,7 @@ footer
         font-weight: bold
         &:hover
             opacity: 0.7
-    .media
+    .medias
         >*
             display: inline-block
         section

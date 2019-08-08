@@ -1,4 +1,16 @@
 @media screen and (max-width: 900px)
+    .top
+        .logo
+            font-size: 40px
+            span
+                font-size: 16px
+        .info
+            .info-p
+                span:last-of-type
+                    font-size: 21px
+
+    .display .carousel-indicators
+        margin-bottom: 8px
     .about
         grid-template-columns: 1fr
         //grid-template-rows: auto auto
@@ -11,17 +23,28 @@
         //display: inline-block
         flex-direction: column
         align-items: center
+        .serv
+            margin: 0px
 
     .contact-cont
         .contact
             grid-template-columns: 1fr
+            grid-gap: 30px
         .cont
             border: none
             border-top: 1px solid #000
             margin: auto 
 @media screen and (max-width: 650px)
+    .disappear
+        display: none
+    .top
+        .logo
+            font-size: 30px
+            span
+                font-size: 16px
+        .info
+            display: none
     .menu
-        .collapse
             
         .fa-bars
             display: block
@@ -30,17 +53,15 @@
         .ul-cont
             grid-row: 2/3
             grid-column: 1/2
+
         ul
             flex-direction: column
 
             li
                 border: none
-    .top
-        .info
-            display: none
+        
     .contact-cont
         .input-cont
-            display: flex
             flex-direction: column
             width: 100%
             align-items: center
@@ -50,5 +71,10 @@
                     margin-bottom: 20px
         .cont
             padding: 50px 0 
+            i
+                font-size: 30px
+                margin-right: 10px
+            span
+                font-size: 14px
     
     
